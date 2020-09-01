@@ -108,23 +108,23 @@
 	            }
 	        }
 
-          if (cell.col == 2) {
-            prefix = '<a href = "https://docs.google.com/spreadsheets/d/1xF1cdazAejukTt2M6-aAXWG6fivTHFqt8rurF8euXOE/edit#gid=' + state + '" target = "sheet">';
+          if (cell.col == 8) {
+            prefix = '<a href = "https://docs.google.com/spreadsheets/d/1FFAY0CY9wRTspgc1Zt3Ltd8jcKN4HPAFFr_4nLqBQB0/edit#gid=' + state + '" target = "sheet">';
             suffix = "</a> " + hardState;
           }
           else {
             prefix = "";
             suffix = "";
           }
-				if (cell.row == 1 && cell.col == 8) { checkCount = cell["$t"]; }
-          		if (cell.row == 1 && cell.col == 9) { dcCount = cell["$t"]; }
+				if (cell.row == 1 && cell.col == 5) { checkCount = cell["$t"]; }
+			if (cell.row == 1 && cell.col == 6) { dcCount = cell["$t"]; } 
           		
-			if ( (cell.row > 3 || cell.row == 1) && (cell.col == 2 || cell.col == 7 || cell.col == 8 || cell.col == 9)) {
+if ( (cell.row > 2 || cell.row == 1) && (cell.col == 8 || cell.col == 4 || cell.col == 5 || cell.col == 6)) {
           		var place = prefix + cell["$t"] + suffix 
-          		if (cell.row == 1 && cell.col == 8) { place = "Checks Left: <br>" + cell["$t"] }
-          		if (cell.row == 1 && cell.col == 9) { place = "DC Left: <br>" + cell["$t"] }
+          		if (cell.row == 1 && cell.col == 5) { place = "Checks Left: <br>" + cell["$t"] }
+			if (cell.row == 1 && cell.col == 6) { place = "DC Left: <br>" + cell["$t"] } 
           		
-        		if (cell.col == 2) {
+        		if (cell.col == 4) {
               		id = cell["$t"];
               		drawRow(table, rowData, id);
               		rowData = [];
@@ -140,7 +140,7 @@
 
   </script>   
   
-<script src="https://spreadsheets.google.com/feeds/cells/1xF1cdazAejukTt2M6-aAXWG6fivTHFqt8rurF8euXOE/1/public/values?alt=json-in-script&callback=doData"></script>
+<script src="https://spreadsheets.google.com/feeds/cells/1FFAY0CY9wRTspgc1Zt3Ltd8jcKN4HPAFFr_4nLqBQB0/1/public/values?alt=json-in-script&callback=doData"></script>
 <style type="text/css">
   table {border-collapse: collapse; width: 200;}
   th, td {border: thin solid black; padding: 3px;}
