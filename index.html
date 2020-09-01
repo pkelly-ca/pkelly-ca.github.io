@@ -1,1 +1,163 @@
-Hello World
+<!doctype html>
+<html>
+<head>
+
+<meta http-equiv="refresh" content="60">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+  var spData = null;
+  function doData(json) {
+      spData = json.feed.entry;
+  }
+  
+  function drawCell(tr, val) {
+      var td = $("<td/>");
+      tr.append(td);
+      td.append(val);
+      return td;
+  }
+  function drawRow(table, rowData) {
+    if (rowData == null) return null;
+    if (rowData.length == 0) return null;
+    var tr = $("<tr/>");
+    table.append(tr);
+    for(var c=0; c<rowData.length; c++) {
+      drawCell(tr, rowData[c]);
+    }
+    return tr;
+  }
+  
+  function drawTable(parent) {
+    var table = $("<table/>");
+    parent.append(table);
+    return table;
+  }
+
+  function readData(parent) {
+    var data = spData;
+    var table = drawTable(parent);
+    var rowData = [];
+	for(var r=0; r<data.length; r++) {
+    	var cell = data[r]["gs$cell"];
+        var val = cell["$t"];
+
+          var state;
+          var hardState;
+          var checkCount;
+          var dcCount;
+
+          if (cell.col == 2) {
+	          a = cell["$t"];
+	          switch(a){
+	            case "AK": state = "190491828"; hardState = ""; break;
+				case "AL": state = "1887067030"; hardState = ""; break;
+				case "AR": state = "1585633145"; hardState = ""; break;
+				case "AS": state = "1951307536"; hardState = ""; break;
+				case "AZ": state = "951303088"; hardState = ""; break;
+				case "CA": state = "554621274"; hardState = ""; break;
+				case "CO": state = "917244802"; hardState = ""; break;
+				case "CT": state = "1878064739"; hardState = ""; break;
+				case "DC": state = "1394468287"; hardState = ""; break;
+				case "DE": state = "1974862832"; hardState = ""; break;
+				case "FL": state = "624569127"; hardState = "&#128721"; break;
+				case "GA": state = "1153899501"; hardState = ""; break;
+				case "GU": state = "378346673"; hardState = ""; break;
+				case "HI": state = "1775048504"; hardState = ""; break;
+				case "IA": state = "840652371"; hardState = ""; break;
+				case "ID": state = "1965523075"; hardState = ""; break;
+				case "IL": state = "11941681"; hardState = ""; break;
+				case "IN": state = "730527560"; hardState = ""; break;
+				case "KS": state = "230613564"; hardState = ""; break;
+				case "KY": state = "1790926966"; hardState = ""; break;
+				case "LA": state = "1386504437"; hardState = "&#128721"; break;
+				case "MA": state = "39450924"; hardState = ""; break;
+				case "MD": state = "582304744"; hardState = ""; break;
+				case "ME": state = "268794524"; hardState = "&#128721"; break;
+				case "MI": state = "634083959"; hardState = ""; break;
+				case "MN": state = "1654486158"; hardState = ""; break;
+				case "MO": state = "1021045902"; hardState = ""; break;
+				case "MP": state = "1771053812"; hardState = ""; break;
+				case "MS": state = "1264664262"; hardState = ""; break;
+				case "MT": state = "180452935"; hardState = ""; break;
+				case "NC": state = "596985154"; hardState = ""; break;
+				case "ND": state = "1524221351"; hardState = ""; break;
+				case "NE": state = "1480614357"; hardState = ""; break;
+				case "NH": state = "1891440637"; hardState = ""; break;
+				case "NJ": state = "1227781679"; hardState = "&#128721"; break;
+				case "NM": state = "219148702"; hardState = ""; break;
+				case "NV": state = "694601559"; hardState = ""; break;
+				case "NY": state = "161756959"; hardState = "&#128721"; break;
+				case "OH": state = "373001276"; hardState = ""; break;
+				case "OK": state = "1968793463"; hardState = "&#128721"; break;
+				case "OR": state = "2139634853"; hardState = "&#128721"; break;
+				case "PA": state = "1220433418"; hardState = ""; break;
+				case "PR": state = "844496262"; hardState = ""; break;
+				case "RI": state = "1940341524"; hardState = "&#128721"; break;
+				case "SC": state = "1410367221"; hardState = ""; break;
+				case "SD": state = "2125394065"; hardState = ""; break;
+				case "TN": state = "882486339"; hardState = ""; break;
+				case "TX": state = "499560467"; hardState = ""; break;
+				case "UT": state = "1124384109"; hardState = ""; break;
+				case "VA": state = "888682509"; hardState = ""; break;
+				case "VI": state = "354465819"; hardState = ""; break;
+				case "VT": state = "385180986"; hardState = ""; break;
+				case "WA": state = "1827230370"; hardState = ""; break;
+				case "WI": state = "1429538862"; hardState = ""; break;
+				case "WV": state = "606702038"; hardState = ""; break;
+				case "WY": state = "561508328"; hardState = ""; break;
+	            }
+	        }
+
+          if (cell.col == 2) {
+            prefix = '<a href = "https://docs.google.com/spreadsheets/d/1xF1cdazAejukTt2M6-aAXWG6fivTHFqt8rurF8euXOE/edit#gid=' + state + '" target = "sheet">';
+            suffix = "</a> " + hardState;
+          }
+          else {
+            prefix = "";
+            suffix = "";
+          }
+				if (cell.row == 1 && cell.col == 8) { checkCount = cell["$t"]; }
+          		if (cell.row == 1 && cell.col == 9) { dcCount = cell["$t"]; }
+          		
+			if ( (cell.row > 3 || cell.row == 1) && (cell.col == 2 || cell.col == 7 || cell.col == 8 || cell.col == 9)) {
+          		var place = prefix + cell["$t"] + suffix 
+          		if (cell.row == 1 && cell.col == 8) { place = "Checks Left: <br>" + cell["$t"] }
+          		if (cell.row == 1 && cell.col == 9) { place = "DC Left: <br>" + cell["$t"] }
+          		
+        		if (cell.col == 2) {
+              		id = cell["$t"];
+              		drawRow(table, rowData, id);
+              		rowData = [];
+          		}
+        		rowData.push(place);
+        	}
+      	}
+      drawRow(table, rowData);
+  }
+  $(document).ready(function(){
+      readData($("#data"));
+  });
+
+  </script>   
+  
+<script src="https://spreadsheets.google.com/feeds/cells/1xF1cdazAejukTt2M6-aAXWG6fivTHFqt8rurF8euXOE/1/public/values?alt=json-in-script&callback=doData"></script>
+<style type="text/css">
+  table {border-collapse: collapse; width: 200;}
+  th, td {border: thin solid black; padding: 3px;}
+  tr.head th, tr.head td {background-color: #EDEDED; border-bottom: 4px double black;}
+  span.linetitle {font-weight: bold;}
+  div.lineclass {font-style: italic;}
+  .title, .result {width: 80%;}
+  .notes {width: 15%;}
+  h1 {text-align: center;}
+  body {margin: 12px; font-size: 12px;}
+</style>
+<style type="text/css" media="print">
+  form {display: none;}
+</style>
+</head>
+<body>
+<h2>welcome to race data entry</h2>
+<div id="data"/>
+</body>
+</html> 
