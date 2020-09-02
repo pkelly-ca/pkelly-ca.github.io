@@ -117,12 +117,12 @@
             suffix = "";
 	  } 
           		
-			if ( (cell.row > 2 /*|| cell.row == 1*/) && (cell.col == 2 || cell.col == 4 || cell.col == 5 || cell.col == 6)) {
+			if ( (cell.row > 2 /*|| cell.row == 1*/) && (cell.col == 8 || cell.col == 4 || cell.col == 5 || cell.col == 6)) {
           		var place = cell["$t"]  
 /*          		if (cell.row == 1 && cell.col == 5) { place = "Checks Left: <br>" + cell["$t"] }
 			if (cell.row == 1 && cell.col == 6) { place = "DC Left: <br>" + cell["$t"] } */
           		
-        		if (cell.col == 2) {
+        		if (cell.col == 4) {
               		id = cell["$t"];
               		drawRow(table, rowData, id);
               		rowData = [];
