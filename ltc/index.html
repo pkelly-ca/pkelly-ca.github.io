@@ -122,8 +122,8 @@
 	  } 
           		
 		if ( cell.row == 1 && (cell.col == 5 || cell.col == 6)) {
-          		if (cell.col == 5) { place = "Checks Left: <br>" + cell["$t"] }
-			if (cell.col == 6) { place = "DC Left: <br>" + cell["$t"] } 
+			if (cell.col == 5) { place = "<b>Checks Left:</b> <br>" + cell["$t"] }
+			if (cell.col == 6) { place = "<b>DC Left:</b> <br>" + cell["$t"] } 
           		
         		rowData.push(place);
         		if (cell.col == 6) {
@@ -134,10 +134,10 @@
         	}
 
 		if ( cell.row == 2 && cell.col == 1 ) {
-			last_check = "Last Check: <br>"
-			checker = "Checker: <br>"
-			dcer = "DCer: <br>"
-			place = "State: <br>" 
+			last_check = "<b>Last Check</b><br>"
+			checker = "<b>Checker</b><br>"
+			dcer = "<b>DCer</b><br>"
+			place = "<b>State:</b>br>" 
           		
         		rowData.push(place);
         		rowData.push(last_check);
