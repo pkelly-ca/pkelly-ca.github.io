@@ -134,17 +134,17 @@
         	}
           		
 		if ( cell.row > 2  && (cell.col == 8 || cell.col == 4 || cell.col == 5 || cell.col == 6)) {
-			if (cell.row == 3) (
+/*			if (cell.row == 3) (
 				if (cell.col == 4) { last_check = "Last Check: <br>" + cell["$t"] }
 				if (cell.col == 5) { checker  = "Checker: <br>" + cell["$t"] }
 				if (cell.col == 6) { dcer  = "DCer: <br>" + cell["$t"] }
 				if (cell.col == 8) { place  = "State: <br>" + prefix + cell["$t"] + suffix }
-			) else (
+			) else ( */
 	          		if (cell.col == 4) { last_check = cell["$t"] }
 	          		if (cell.col == 5) { checker  = cell["$t"] }
 	          		if (cell.col == 6) { dcer  = cell["$t"] }
 	          		if (cell.col == 8) { place  = prefix + cell["$t"] + suffix }
-			)
+	/*		) */
           		
         		if (cell.col == 8) {
         		rowData.push(place);
