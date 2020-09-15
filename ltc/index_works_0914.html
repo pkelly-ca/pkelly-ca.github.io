@@ -50,7 +50,7 @@
 	var dcer;
 	var place;
 
-          if (cell.col == 9) {
+          if (cell.col == 8) {
 	          a = cell["$t"];
 	          switch(a){
 	            case "AK": state = "2024926576"; hardState = "&#128994"; break;
@@ -112,7 +112,7 @@
 	            }
 	        }
 
-          if (cell.col == 9) {
+          if (cell.col == 8) {
             prefix = '<a href = "https://docs.google.com/spreadsheets/d/1FFAY0CY9wRTspgc1Zt3Ltd8jcKN4HPAFFr_4nLqBQB0/edit#gid=' + state + '" target = "sheet">';
 		  suffix = "</a> " + hardState; 
           }
@@ -121,12 +121,12 @@
             suffix = "";
 	  } 
           		
-		if ( cell.row == 1 && (cell.col == 6 || cell.col == 7)) {
-			if (cell.col == 6) { place = "<b>Checks Left:</b> <br>" + cell["$t"] }
-			if (cell.col == 7) { place = "<b>DC Left:</b> <br>" + cell["$t"] } 
+		if ( cell.row == 1 && (cell.col == 5 || cell.col == 6)) {
+			if (cell.col == 5) { place = "<b>Checks Left:</b> <br>" + cell["$t"] }
+			if (cell.col == 6) { place = "<b>DC Left:</b> <br>" + cell["$t"] } 
           		
         		rowData.push(place);
-        		if (cell.col == 7) {
+        		if (cell.col == 6) {
               		id = cell["$t"];
               		drawRow(table, rowData, id);
               		rowData = [];
@@ -148,10 +148,10 @@
               		rowData = [];
         	}
 
-		if ( cell.row > 2  && (cell.col == 9 || cell.col == 3 || cell.col == 6 || cell.col == 7)) {
-	          	if (cell.col == 3) { last_check = cell["$t"] }
-	          	if (cell.col == 6) { checker  = cell["$t"] }
-	          	if (cell.col == 7) { dcer  = cell["$t"] }
+		if ( cell.row > 2  && (cell.col == 8 || cell.col == 4 || cell.col == 5 || cell.col == 6)) {
+	          	if (cell.col == 4) { last_check = cell["$t"] }
+	          	if (cell.col == 5) { checker  = cell["$t"] }
+	          	if (cell.col == 6) { dcer  = cell["$t"] }
 	          	if (cell.col == 8) { place  = prefix + cell["$t"] + suffix }
           		
         		if (cell.col == 8) {
