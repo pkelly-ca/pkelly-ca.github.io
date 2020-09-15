@@ -136,15 +136,17 @@
         	}
 
 		if ( cell.row == 2 && cell.col == 1 ) {
-			last_check = "<b>Last Check</b>"
-			fac_check = "<b>Fac Date</b>"
-			fac_checker = "<b>Fac Checker</b>"
-			checker = "<b>Checker</b>"
+			last_check = "<b>Last CHK</b>"
+			fac_check = "<b>Fac CHK</b>"
+			fac_checker = "<b>Fac CHKer</b>"
+			checker = "<b>CHKer</b>"
 			dcer = "<b>DCer</b>"
 			place = "<b>State</b>" 
           		
         		rowData.push(place);
         		rowData.push(last_check);
+        		rowData.push(fac_check);
+        		rowData.push(fac_checker);
         		rowData.push(checker);
         		rowData.push(dcer);
               		id = cell["$t"];
