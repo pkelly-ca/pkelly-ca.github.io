@@ -143,10 +143,10 @@
 			dcer = "<b>DCer</b>"
 			place = "<b>State</b>" 
           		
+        		rowData.push(fac_checker);
+        		rowData.push(fac_check);
         		rowData.push(place);
         		rowData.push(last_check);
-        		rowData.push(fac_check);
-        		rowData.push(fac_checker);
         		rowData.push(checker);
         		rowData.push(dcer);
               		id = cell["$t"];
@@ -163,10 +163,10 @@
 	          	if (cell.col == 9) { place  = prefix + cell["$t"] + suffix }
           		
         		if (cell.col == 9) {
+        		rowData.push(fac_checker);
+        		rowData.push(fac_check);
         		rowData.push(place);
         		rowData.push(last_check);
-        		rowData.push(fac_check);
-        		rowData.push(fac_checker);
         		rowData.push(checker);
         		rowData.push(dcer);
               		id = cell["$t"];
